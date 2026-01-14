@@ -2,11 +2,17 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# ⚠️ Production me baad me change karna
 SECRET_KEY = "dev-secret-key"
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+# ✅ Render domain ADD kiya (sirf domain, https nahi)
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "task-project-management-1-mr5j.onrender.com",
+]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -32,6 +38,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+# Frontend (Vercel/Local) ke liye
 CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = "overdue_service.urls"
@@ -66,5 +73,6 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
